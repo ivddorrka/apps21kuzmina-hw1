@@ -8,7 +8,7 @@ public class TemperatureSeriesAnalysis {
     private final double[] temperatureSeries;
     private int size = 0;
     private int capacity = 0;
-    private int magicNumber = -273;
+    private static final int magicNumber = -273;
 
 
     public TemperatureSeriesAnalysis() {
