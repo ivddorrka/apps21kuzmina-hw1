@@ -27,7 +27,7 @@ public class TemperatureSeriesAnalysis {
     }
 
     public double average() {
-        if (temperatureSeries.length == 0) {
+        if (temperatureSeries.length == 0){
             throw new IllegalArgumentException();
         }
 
@@ -39,7 +39,7 @@ public class TemperatureSeriesAnalysis {
     }
 
     public double deviation() {
-        if (temperatureSeries.length == 0) {
+        if (temperatureSeries.length == 0){
             throw new IllegalArgumentException();
         }
         double aver = average();
@@ -95,14 +95,14 @@ public class TemperatureSeriesAnalysis {
 
     public double[] findTempsLessThen(double tempValue) {
         int sizeLessArray = 0;
-        for (double temp : temperatureSeries) {
+        for (double temp : temperatureSeries){
             if (temp < tempValue){
                 sizeLessArray += 1;
             }
         }
         int curElement = 0;
         double[] lessArray = new double[sizeLessArray];
-        for (double temper : temperatureSeries) {
+        for (double temper : temperatureSeries){
             if (temper < tempValue){
                 lessArray[curElement] += 1;
             }
@@ -112,14 +112,14 @@ public class TemperatureSeriesAnalysis {
 
     public double[] findTempsGreaterThen(double tempValue) {
         int sizeMoreArray = 0;
-        for (double temp : temperatureSeries) {
+        for (double temp : temperatureSeries){
             if (temp < tempValue){
                 sizeMoreArray += 1;
             }
         }
         int curElement = 0;
         double[] moreArray = new double[sizeMoreArray];
-        for (double temper : temperatureSeries) {
+        for (double temper : temperatureSeries){
             if (temper > tempValue){
                 moreArray[curElement] += 1;
             }
