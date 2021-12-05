@@ -4,10 +4,10 @@ import lombok.Getter;
 
 @Getter
 public class TempSummaryStatistics {
-    public double averageTemperature;
-    public double deviationTemperature;
-    public double minimumTemperature;
-    public double maximumTemperature;
+    private final double averageTemperature;
+    private final double deviationTemperature;
+    private final double minimumTemperature;
+    private final double maximumTemperature;
 
     TempSummaryStatistics(double averageTemperature, double deviationTemperature, double minimumTemperature, double maximumTemperature) {
         this.averageTemperature = averageTemperature;

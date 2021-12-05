@@ -8,6 +8,7 @@ public class TemperatureSeriesAnalysis {
     private final double[] temperatureSeries;
     private int size = 0;
     private int capacity = 0;
+    private int magicNumber = -273;
 
 
     public TemperatureSeriesAnalysis() {
@@ -16,7 +17,7 @@ public class TemperatureSeriesAnalysis {
 
     public TemperatureSeriesAnalysis(double[] temperatureSeries) {
         for (double check: temperatureSeries) {
-            if (check < -273) {
+            if (check < magicNumber) {
                 throw new InputMismatchException();
             }
         }
@@ -133,7 +134,7 @@ public class TemperatureSeriesAnalysis {
 
     public double addTemps(double... temps) {
         for (double check: temperatureSeries) {
-            if (check < -273) {
+            if (check < magicNumber) {
                 throw new InputMismatchException();
             }
         }
