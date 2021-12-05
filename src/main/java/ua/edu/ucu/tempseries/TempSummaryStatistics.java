@@ -1,5 +1,8 @@
 package ua.edu.ucu.tempseries;
 
+import lombok.Getter;
+
+@Getter
 public class TempSummaryStatistics {
     public double averageTemperature;
     public double deviationTemperature;

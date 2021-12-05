@@ -5,9 +5,9 @@ import java.util.InputMismatchException;
 
 
 public class TemperatureSeriesAnalysis {
-    public double[] temperatureSeries;
-    public static int size = 0;
-    public static int capacity = 0;
+    private final double[] temperatureSeries;
+    private int size = 0;
+    private int capacity = 0;
 
 
     public TemperatureSeriesAnalysis() {
@@ -47,7 +47,7 @@ public class TemperatureSeriesAnalysis {
         for (double temp : temperatureSeries) {
             answer += temp * temp;
         }
-        answer /=temperatureSeries.length;
+        answer /= temperatureSeries.length;
         double averageSquare = aver*aver;
         return Math.sqrt(answer-averageSquare);
     }
@@ -144,7 +144,7 @@ public class TemperatureSeriesAnalysis {
         }
 
         int elPoint = size+1;
-        for ( double temp : temps) {
+        for (double temp : temps) {
             temperatureSeries[elPoint] = temp;
         }
 
