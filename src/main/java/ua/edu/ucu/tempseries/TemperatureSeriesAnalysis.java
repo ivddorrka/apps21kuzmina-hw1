@@ -5,7 +5,7 @@ import java.util.InputMismatchException;
 
 
 public class TemperatureSeriesAnalysis {
-    private final double[] temperatureSeries;
+    private double[] temperatureSeries;
     private int size = 0;
     private int capacity = 0;
     private static final int magicNumber = -273;
@@ -138,20 +138,21 @@ public class TemperatureSeriesAnalysis {
                 throw new InputMismatchException();
             }
         }
-
-        int sizeNewArray = 0;
-        if (temps.length + size > capacity) {
+        double sum = 0;
+        while (temps.length + size > capacity) {
             capacity *= 2;
         }
 
-        int elPoint = size+1;
-        for (double temp : temps) {
-            temperatureSeries[elPoint] = temp;
+        double[] newTemps = new double[capacity];
+        for (int i = 0; i < size; i++) {
+            newTemps[i] = temperatureSeries[i];
+            sum += temperatureSeries[i];
         }
-
-        double sum = 0;
-        for (double alltemp : temps) {
-            sum += alltemp;
+        temperatureSeries = newTemps;
+        for (double temp: temps) {
+            temperatureSeries[size] = temp;
+            size++;
+            sum += temp;
         }
         return sum;
     }

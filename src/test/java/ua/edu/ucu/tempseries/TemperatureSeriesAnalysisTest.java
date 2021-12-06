@@ -111,4 +111,20 @@ public class TemperatureSeriesAnalysisTest {
 
         double[] actualResult = seriesAnalysis.findTempsLessThen(3.5);
     }
+
+    @Test
+    public void addTemps() {
+        // setup input data and expected result
+        double[] temperatureSeries = {1.0, 2.0, 3.0};
+        TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+        double expResult = 7.0;
+
+        // call tested method
+        double actualResult = seriesAnalysis.addTemps(0.2, 0.3, 0.5);
+
+        // compare expected result with actual result
+        assertEquals(expResult, actualResult, 0.00001);
+
+    }
+
 }
